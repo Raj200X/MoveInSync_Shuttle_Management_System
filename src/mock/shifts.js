@@ -28,6 +28,20 @@ const shifts = [
   { id: 'sh10', driverId: 'd6', date: today, startTime: '16:00', endTime: '22:00', type: 'DUTY' },
   { id: 'sh11', driverId: 'd6', date: today, startTime: '19:00', endTime: '19:30', type: 'BREAK' },
 
+  // Today — Rajesh Gupta (d7)
+  { id: 'sh15', driverId: 'd7', date: today, startTime: '08:00', endTime: '14:00', type: 'DUTY' },
+  { id: 'sh16', driverId: 'd7', date: today, startTime: '11:00', endTime: '11:30', type: 'BREAK' },
+
+  // Today — Deepak Verma (d8) - Inactive, maybe no shift today
+
+  // Today — Sanjay Dutt (d9)
+  { id: 'sh17', driverId: 'd9', date: today, startTime: '12:00', endTime: '18:00', type: 'DUTY' },
+  { id: 'sh18', driverId: 'd9', date: today, startTime: '15:00', endTime: '15:30', type: 'BREAK' },
+
+  // Today — Prakash Nair (d10)
+  { id: 'sh19', driverId: 'd10', date: today, startTime: '06:00', endTime: '12:00', type: 'DUTY' },
+  { id: 'sh20', driverId: 'd10', date: today, startTime: '09:00', endTime: '09:30', type: 'BREAK' },
+
   // Tomorrow — Ramesh Kumar (d1)
   { id: 'sh12', driverId: 'd1', date: tomorrow, startTime: '08:00', endTime: '14:00', type: 'DUTY' },
   { id: 'sh13', driverId: 'd1', date: tomorrow, startTime: '11:00', endTime: '11:30', type: 'BREAK' },

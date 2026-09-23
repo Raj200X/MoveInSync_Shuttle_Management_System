@@ -21,6 +21,11 @@ const trips = [
   { id: 't8', routeId: 'r3', driverId: 'd2', date: today, departureTime: '08:00', totalSeats: 18, availableSeats: 12, status: 'SCHEDULED' },
   { id: 't9', routeId: 'r3', driverId: 'd3', date: today, departureTime: '15:00', totalSeats: 18, availableSeats: 18, status: 'SCHEDULED' },
 
+  // Today - Additional Trips for new drivers
+  { id: 't15', routeId: 'r1', driverId: 'd7', date: today, departureTime: '08:30', totalSeats: 20, availableSeats: 5,  status: 'SCHEDULED' },
+  { id: 't16', routeId: 'r2', driverId: 'd9', date: today, departureTime: '12:30', totalSeats: 15, availableSeats: 2,  status: 'SCHEDULED' },
+  { id: 't17', routeId: 'r3', driverId: 'd10', date: today, departureTime: '07:30', totalSeats: 18, availableSeats: 10, status: 'SCHEDULED' },
+
   // Yesterday - completed
   { id: 't10', routeId: 'r1', driverId: 'd2', date: yesterday, departureTime: '07:00', totalSeats: 20, availableSeats: 0,  status: 'COMPLETED' },
   { id: 't11', routeId: 'r2', driverId: 'd4', date: yesterday, departureTime: '09:00', totalSeats: 15, availableSeats: 0,  status: 'COMPLETED' },
