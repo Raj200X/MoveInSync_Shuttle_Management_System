@@ -1,6 +1,7 @@
 import { useOutlet, useLocation } from 'react-router-dom';
 import { Sidebar } from './Sidebar';
 import styles from './AdminLayout.module.css';
+import { AnimatePresence } from 'framer-motion';
 import { PageWrapper } from '../common/PageWrapper';
 
 export function AdminLayout() {
@@ -11,9 +12,11 @@ export function AdminLayout() {
     <div className={styles.layout}>
       <Sidebar />
       <main className={styles.main}>
-        <PageWrapper key={location.pathname}>
-          {currentOutlet}
-        </PageWrapper>
+        <AnimatePresence mode="wait">
+          <PageWrapper key={location.pathname}>
+            {currentOutlet}
+          </PageWrapper>
+        </AnimatePresence>
       </main>
     </div>
   );
