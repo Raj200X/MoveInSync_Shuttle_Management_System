@@ -15,17 +15,17 @@
   --color-primary-mid:    #D1EDDE;
 
   /* Booking status badge colors — match MoveInSync exactly */
-  --status-accepted-bg:   #D1FAE5;  --status-accepted-text:  #065F46;
-  --status-waiting-bg:    #FEF3C7;  --status-waiting-text:   #92400E;
-  --status-noshow-bg:     #FFEDD5;  --status-noshow-text:    #9A3412;
-  --status-declined-bg:   #FEE2E2;  --status-declined-text:  #991B1B;
-  --status-completed-bg:  #D1FAE5;  --status-completed-text: #065F46;
-  --status-requested-bg:  #DBEAFE;  --status-requested-text: #1E40AF;
-  --status-ongoing-bg:    #2563EB;  --status-ongoing-text:   #FFFFFF;
-  --status-cancelled-bg:  #FCE7F3;  --status-cancelled-text: #9D174D;
-  --status-dropped-bg:    #F3F4F6;  --status-dropped-text:   #374151;
-  --status-confirmed-bg:  #D1FAE5;  --status-confirmed-text: #065F46;
-  --status-scheduled-bg:  #DBEAFE;  --status-scheduled-text: #1E40AF;
+  --status-accepted-bg:   #E6F8ED;  --status-accepted-text:  #0C6C52;  --status-accepted-border:  #B5E5CD;
+  --status-waiting-bg:    #FFF8E1;  --status-waiting-text:   #B85C00;  --status-waiting-border:   #FEE08B;
+  --status-noshow-bg:     #FCE8EC;  --status-noshow-text:    #9F163D;  --status-noshow-border:    #F5C4CE;
+  --status-declined-bg:   #F3F5F7;  --status-declined-text:  #3A5B8A;  --status-declined-border:  #DCE1E7;
+  --status-completed-bg:  #E6F8ED;  --status-completed-text: #0C6C52;  --status-completed-border: #B5E5CD;
+  --status-requested-bg:  #DBEAFE;  --status-requested-text: #1E40AF;  --status-requested-border: #BFDBFE;
+  --status-ongoing-bg:    #2563EB;  --status-ongoing-text:   #FFFFFF;  --status-ongoing-border:   #1D4ED8;
+  --status-cancelled-bg:  #FCE8EC;  --status-cancelled-text: #9F163D;  --status-cancelled-border: #F5C4CE;
+  --status-dropped-bg:    #F3F4F6;  --status-dropped-text:   #374151;  --status-dropped-border:   #D1D5DB;
+  --status-confirmed-bg:  #E6F8ED;  --status-confirmed-text: #0C6C52;  --status-confirmed-border: #B5E5CD;
+  --status-scheduled-bg:  #DBEAFE;  --status-scheduled-text: #1E40AF;  --status-scheduled-border: #BFDBFE;
 
   /* Driver status */
   --online-bg:   #D1FAE5; --online-text:  #065F46;

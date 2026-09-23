@@ -9,6 +9,11 @@ const variantMap = {
   inactive:  'neutral',
   duty:      'primary',
   break:     'warning',
+  // New statuses
+  waiting:   'warning',
+  accepted:  'success',
+  'no show': 'error',
+  declined:  'neutral'
 };
 
 export function Badge({ children, variant, label }) {
