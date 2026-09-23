@@ -1,0 +1,202 @@
+/* BoardingPass — premium airline-style digital pass */
+.pass {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl, 16px);
+  overflow: hidden;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+}
+
+/* ── Header strip ─────────────────────────────── */
+.header {
+  background: var(--color-primary);
+  color: #fff;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.busIcon {
+  flex-shrink: 0;
+}
+
+.airline {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.passLabel {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  opacity: 0.85;
+  text-transform: uppercase;
+}
+
+/* ── Body ─────────────────────────────────────── */
+.body {
+  padding: 20px 20px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.routeSection {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.fieldLabel {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+}
+
+.fieldValue {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  line-height: 1.2;
+}
+
+.detailsRow {
+  display: flex;
+  gap: 0;
+  border-top: 1px dashed var(--color-border);
+  padding-top: 14px;
+}
+
+.detailItem {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 0 4px;
+  color: var(--color-text-muted);
+  border-right: 1px dashed var(--color-border);
+}
+
+.detailItem:last-child {
+  border-right: none;
+}
+
+.detailLabel {
+  font-size: 0.58rem;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.detailValue {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+/* ── Tear line ────────────────────────────────── */
+.tearLine {
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  gap: 0;
+  position: relative;
+}
+
+.circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  flex-shrink: 0;
+  margin: 0 -10px;
+  z-index: 1;
+}
+
+.dashes {
+  flex: 1;
+  border-top: 2px dashed var(--color-border);
+}
+
+/* ── QR section ───────────────────────────────── */
+.qrSection {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 16px 20px 20px;
+}
+
+.qrWrap {
+  flex-shrink: 0;
+  padding: 8px;
+  background: var(--color-bg);
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-primary);
+}
+
+.qrMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.bookingId {
+  font-size: 0.72rem;
+  font-family: monospace;
+  color: var(--color-text-muted);
+  letter-spacing: 0.08em;
+}
+
+.scanNote {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.statusBadge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  width: fit-content;
+}
+
+.statusConfirmed {
+  background: rgba(22, 163, 74, 0.15);
+  color: #16a34a;
+  border: 1px solid rgba(22, 163, 74, 0.3);
+}
+
+.statusOther {
+  background: rgba(148, 163, 184, 0.15);
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
+}

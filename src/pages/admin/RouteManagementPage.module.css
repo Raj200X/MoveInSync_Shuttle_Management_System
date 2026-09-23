@@ -1,0 +1,120 @@
+.page { padding: 1.5rem; }
+.pageHeader { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 1.5rem; }
+.pageTitle { font-size: var(--font-size-2xl); font-weight: var(--font-weight-bold); }
+.pageSub { color: var(--color-text-muted); font-size: var(--font-size-sm); margin-top: 0.25rem; }
+
+.tableWrap {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.table { width: 100%; border-collapse: collapse; }
+.table th {
+  text-align: left;
+  padding: 0.875rem 1.25rem;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: var(--color-surface-alt);
+  border-bottom: 1px solid var(--color-border);
+}
+.table td {
+  padding: 1rem 1.25rem;
+  font-size: var(--font-size-sm);
+  border-bottom: 1px solid var(--color-border);
+  vertical-align: middle;
+}
+.tableRow:last-child td { border-bottom: none; }
+.tableRow:hover td { background: var(--color-row-hover); }
+
+.routeName { font-weight: var(--font-weight-medium); color: var(--color-text-primary); }
+.routeStops { font-size: var(--font-size-xs); color: var(--color-text-muted); margin-top: 2px; }
+.stopCount {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
+  padding: 0.1rem 0.5rem;
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+}
+.duration { color: var(--color-text-secondary); }
+
+.actions { display: flex; gap: 0.25rem; }
+.actionBtn {
+  display: flex; align-items: center; justify-content: center;
+  width: 28px; height: 28px;
+  background: transparent; border: none;
+  border-radius: var(--radius-sm);
+  color: var(--color-text-muted); cursor: pointer;
+  transition: all var(--transition-fast);
+}
+.actionBtn:hover { background: var(--color-surface-alt); color: var(--color-text-primary); }
+.actionBtn:active { transform: scale(0.92); }
+.actionDanger:hover { background: var(--color-error-light); color: var(--color-error); }
+
+.field { display: flex; flex-direction: column; gap: 0.375rem; }
+.label { font-size: var(--font-size-sm); font-weight: var(--font-weight-medium); color: var(--color-text-primary); }
+.input {
+  height: 40px; padding: 0 0.75rem;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+  background: var(--color-surface);
+  outline: none;
+  transition: border-color var(--transition-fast);
+  width: 100%;
+}
+.input:focus { border-color: var(--color-primary); box-shadow: 0 0 0 3px var(--color-primary-muted); }
+
+.stopInputRow { display: flex; gap: 0.5rem; }
+.stopHint { font-size: var(--font-size-xs); color: var(--color-text-muted); }
+
+.stopList { display: flex; flex-direction: column; gap: 0.375rem; margin-top: 0.5rem; }
+.stopItem {
+  display: flex; align-items: center; gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background: var(--color-surface-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+.stopOrder {
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.stopName { flex: 1; font-size: var(--font-size-sm); }
+.stopActions { display: flex; gap: 2px; }
+.stopBtn {
+  display: flex; width: 22px; height: 22px;
+  align-items: center; justify-content: center;
+  border: none; border-radius: 4px;
+  background: none; cursor: pointer;
+  color: var(--color-text-muted);
+  transition: all var(--transition-fast);
+}
+.stopBtn:hover:not(:disabled) { background: var(--color-surface); color: var(--color-text-primary); }
+.stopBtn:disabled { opacity: 0.3; cursor: default; }
+.stopBtnDanger:hover { background: var(--color-error-light) !important; color: var(--color-error) !important; }
+
+.formError {
+  background: var(--color-error-light);
+  color: var(--color-error);
+  border: 1px solid #FECACA;
+  border-radius: var(--radius-md);
+  padding: 0.625rem;
+  font-size: var(--font-size-sm);
+}
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideLeft { from { transform: translateX(100%); } to { transform: translateX(0); } }

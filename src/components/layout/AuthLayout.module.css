@@ -1,0 +1,129 @@
+.container {
+  display: flex;
+  min-height: 100vh;
+  background: var(--color-bg);
+  position: relative;
+  overflow: hidden;
+}
+
+.container::before,
+.container::after {
+  content: "";
+  position: absolute;
+  width: 50vw;
+  height: 50vw;
+  min-width: 400px;
+  min-height: 400px;
+  border-radius: 50%;
+  filter: blur(120px);
+  z-index: 0;
+  opacity: 0.6;
+  pointer-events: none;
+  animation: float 20s infinite ease-in-out alternate;
+}
+
+.container::before {
+  background: var(--color-primary-light);
+  top: -15%;
+  left: -15%;
+}
+
+.container::after {
+  background: var(--color-info-light);
+  bottom: -15%;
+  right: -15%;
+  animation-delay: -10s;
+}
+
+[data-theme="dark"] .container::before { background: rgba(26, 160, 83, 0.2); }
+[data-theme="dark"] .container::after { background: rgba(37, 99, 235, 0.15); }
+
+@keyframes float {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(5%, 10%) scale(1.1); }
+}
+
+.themeToggle {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-fast);
+}
+
+.themeToggle:hover {
+  background: var(--color-surface-alt);
+  transform: scale(1.05);
+}
+
+.themeToggle:active {
+  transform: scale(0.95);
+}
+
+.formPanel {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  z-index: 1;
+  position: relative;
+}
+
+.formContainer {
+  width: 100%;
+  max-width: 420px;
+  background: var(--color-surface);
+  padding: 2.5rem;
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-xl);
+  border: 1px solid var(--color-border);
+  position: relative;
+  z-index: 2;
+}
+
+.mobileLogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: var(--color-primary);
+  margin-bottom: 2rem;
+}
+.mobileLogo span {
+  font-family: var(--font-brand);
+  font-style: italic;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-2xl);
+}
+
+.header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.header h2 {
+  font-size: var(--font-size-2xl);
+  color: var(--color-text-primary);
+  margin-bottom: 0.5rem;
+}
+.subtitle {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.formContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}

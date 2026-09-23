@@ -1,0 +1,8 @@
+[
+  { "id": "d1", "name": "Ramesh Kumar",  "phone": "9876543210", "isActive": true,  "avatar": "RK", "licenseNo": "DL-0420110012345" },
+  { "id": "d2", "name": "Suresh Singh",  "phone": "9876543211", "isActive": true,  "avatar": "SS", "licenseNo": "DL-0420110012346" },
+  { "id": "d3", "name": "Mahesh Yadav",  "phone": "9876543212", "isActive": true,  "avatar": "MY", "licenseNo": "DL-0420110012347" },
+  { "id": "d4", "name": "Dinesh Patel",  "phone": "9876543213", "isActive": true,  "avatar": "DP", "licenseNo": "DL-0420110012348" },
+  { "id": "d5", "name": "Vikas Sharma",  "phone": "9876543214", "isActive": false, "avatar": "VS", "licenseNo": "DL-0420110012349" },
+  { "id": "d6", "name": "Arun Mishra",   "phone": "9876543215", "isActive": true,  "avatar": "AM", "licenseNo": "DL-0420110012350" }
+]

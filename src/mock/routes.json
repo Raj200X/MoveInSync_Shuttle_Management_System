@@ -1,0 +1,50 @@
+[
+  {
+    "id": "r1",
+    "name": "Academic Core Shuttle",
+    "isActive": true,
+    "estimatedDurationMins": 20,
+    "stops": [
+      { "id": "s1", "name": "Main Gate", "order": 1 },
+      { "id": "s2", "name": "Baldev Raj Auditorium (Block 2)", "order": 2 },
+      { "id": "s3", "name": "Architecture (Block 6)", "order": 3 },
+      { "id": "s4", "name": "Engineering (Block 25-28)", "order": 4 },
+      { "id": "s5", "name": "Computer Science (Block 34)", "order": 5 }
+    ]
+  },
+  {
+    "id": "r2",
+    "name": "Hostel & Sports Express",
+    "isActive": true,
+    "estimatedDurationMins": 15,
+    "stops": [
+      { "id": "s6", "name": "Girls Hostel (Block 9-12)", "order": 1 },
+      { "id": "s7", "name": "Indoor Stadium (Block 47)", "order": 2 },
+      { "id": "s8", "name": "Boys Hostel (Block 45, 52)", "order": 3 },
+      { "id": "s9", "name": "Polytechnique (Block 57-58)", "order": 4 }
+    ]
+  },
+  {
+    "id": "r3",
+    "name": "Admin & Law Loop",
+    "isActive": true,
+    "estimatedDurationMins": 25,
+    "stops": [
+      { "id": "s10", "name": "Administrative (Block 29-32)", "order": 1 },
+      { "id": "s11", "name": "Hotel Management (Block 15)", "order": 2 },
+      { "id": "s12", "name": "Education (Block 18)", "order": 3 },
+      { "id": "s13", "name": "Law (Block 20)", "order": 4 }
+    ]
+  },
+  {
+    "id": "r4",
+    "name": "Night Owl Route",
+    "isActive": false,
+    "estimatedDurationMins": 30,
+    "stops": [
+      { "id": "s14", "name": "Boys Hostel (Block 45-53)", "order": 1 },
+      { "id": "s15", "name": "Girls Hostel (Block 9-12)", "order": 2 },
+      { "id": "s16", "name": "Apartments (Block 41-44)", "order": 3 }
+    ]
+  }
+]

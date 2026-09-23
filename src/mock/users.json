@@ -1,0 +1,26 @@
+[
+  {
+    "id": "u1",
+    "name": "Raj Kumar",
+    "email": "student@lpu.in",
+    "password": "password",
+    "role": "STUDENT",
+    "avatar": "RK"
+  },
+  {
+    "id": "u2",
+    "name": "Priya Sharma",
+    "email": "priya@lpu.in",
+    "password": "password",
+    "role": "STUDENT",
+    "avatar": "PS"
+  },
+  {
+    "id": "u3",
+    "name": "Admin User",
+    "email": "admin@lpu.in",
+    "password": "admin123",
+    "role": "ADMIN",
+    "avatar": "AU"
+  }
+]
