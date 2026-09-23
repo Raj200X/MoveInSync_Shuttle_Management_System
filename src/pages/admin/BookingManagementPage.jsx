@@ -5,9 +5,11 @@ import { useToast } from '../../context/ToastContext';
 import { Button } from '../../components/common/Button';
 import { Badge } from '../../components/common/Badge';
 import { Modal } from '../../components/common/Modal';
+import { EditBookingModal } from '../../components/common/EditBookingModal';
 import { EmptyState } from '../../components/common/EmptyState';
 import { DatePicker } from '../../components/common/DatePicker';
 import { SkeletonRow } from '../../components/common/Skeleton';
+import { useDebounce } from '../../hooks/useDebounce';
 import { formatDateDisplay, formatShortDate } from '../../utils/dateUtils';
 import { formatTimeDisplay } from '../../utils/timelineUtils';
 import { getTodayString } from '../../utils/dateUtils';
@@ -60,7 +62,7 @@ function BookingDetailPanel({ booking, routes, onClose, onCancel }) {
             <Button variant="cancel" size="sm" onClick={onCancel}>
               Cancel Booking ⊘
             </Button>
-          <Button size="sm">Edit ✎</Button>
+          <Button size="sm" onClick={() => onEdit(booking)}>Edit ✎</Button>
         </>
       }
     >
@@ -129,17 +131,20 @@ function BookingDetailPanel({ booking, routes, onClose, onCancel }) {
 const PAGE_SIZE = 10;
 
 export default function BookingManagementPage() {
-  const { getAllBookings, cancelBooking } = useBookings();
+  const { getAllBookings, cancelBooking, updateBooking } = useBookings();
   const { routes } = useRoutes();
   const { addToast } = useToast();
 
   const [search, setSearch] = useState('');
+  const debouncedSearch = useDebounce(search, 300);
+
   const [filterDate, setFilterDate] = useState('');
   const [filterStatus, setFilterStatus] = useState('');
   const [sortBy, setSortBy] = useState('bookedAt');
   const [sortDir, setSortDir] = useState('desc');
   const [page, setPage] = useState(1);
   const [selectedBooking, setSelectedBooking] = useState(null);
+  const [isEditing, setIsEditing] = useState(false);
 
   const allBookings = getAllBookings();
 
@@ -147,14 +152,14 @@ export default function BookingManagementPage() {
     let data = allBookings
       .filter(b => !filterDate || b.date === filterDate)
       .filter(b => !filterStatus || b.status === filterStatus)
-      .filter(b => !search || b.routeName?.toLowerCase().includes(search.toLowerCase()) || b.id.includes(search));
+      .filter(b => !debouncedSearch || b.routeName?.toLowerCase().includes(debouncedSearch.toLowerCase()) || b.id.includes(debouncedSearch));
 
     data.sort((a, b) => {
       let av = a[sortBy] || '', bv = b[sortBy] || '';
       return sortDir === 'asc' ? av.localeCompare(bv) : bv.localeCompare(av);
     });
     return data;
-  }, [allBookings, filterDate, filterStatus, search, sortBy, sortDir]);
+  }, [allBookings, filterDate, filterStatus, debouncedSearch, sortBy, sortDir]);
 
   const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
   const paginated = filtered.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
@@ -172,6 +177,13 @@ export default function BookingManagementPage() {
     cancelBooking(selectedBooking.id);
     addToast('Booking cancelled.', 'info');
     setSelectedBooking(null);
+  };
+
+  const handleSaveEdit = (updatedBooking) => {
+    updateBooking(updatedBooking);
+    setSelectedBooking(updatedBooking);
+    setIsEditing(false);
+    addToast('Booking updated successfully.', 'success');
   };
 
   const colHead = (label, field) => (
@@ -307,8 +319,17 @@ export default function BookingManagementPage() {
             routes={routes}
             onClose={() => setSelectedBooking(null)}
             onCancel={handleCancel}
+            onEdit={() => setIsEditing(true)}
           />
         )}
+
+        {/* Edit Modal */}
+        <EditBookingModal
+          booking={selectedBooking}
+          isOpen={isEditing}
+          onClose={() => setIsEditing(false)}
+          onSave={handleSaveEdit}
+        />
       </div>
     </div>
   );

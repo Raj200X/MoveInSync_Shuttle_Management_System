@@ -41,10 +41,14 @@ export function BookingProvider({ children }) {
     setBookings(prev => prev.map(b => b.id === bookingId ? { ...b, status: 'CANCELLED' } : b));
   }, [bookings, releaseSeat]);
 
+  const updateBooking = useCallback((updatedBooking) => {
+    setBookings(prev => prev.map(b => b.id === updatedBooking.id ? updatedBooking : b));
+  }, []);
+
   const getAllBookings = useCallback(() => bookings, [bookings]);
 
   return (
-    <BookingContext.Provider value={{ bookings, getMyBookings, createBooking, cancelBooking, getAllBookings }}>
+    <BookingContext.Provider value={{ bookings, getMyBookings, createBooking, cancelBooking, updateBooking, getAllBookings }}>
       {children}
     </BookingContext.Provider>
   );
